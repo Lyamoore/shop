@@ -9,18 +9,20 @@ export default class GoodList {
         return this.goods;
     }
 
+    getById () {
+        return this.goods.find(good => good.id === id);
+    }
+
+    getQuantity () {
+        return this.goods.reduce((acc, good) => acc + good.quantity, 0);
+    }
+
     add (good) {
         this.goods.push(good);
     }
 
     remove (id) {
-        this.goods.findIndex(good => good.id === id);
-        this.goods.splice(id, 1);
-    }
-
-    getPrice () {
-        let goodsPrice = 0;
-        
-        return goodsPrice;
+        const index = this.goods.findIndex(good => good.id === id);
+        this.goods.splice(index, 1);
     }
 }
