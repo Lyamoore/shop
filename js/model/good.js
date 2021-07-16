@@ -1,6 +1,6 @@
 'use strict'
 
-import idGenerator from "../utils/idGenerator";
+import idGenerator from "../utils/idGenerator.js";
 
 export default class Good {
     constructor ({title, price, description, image}) {
@@ -13,5 +13,9 @@ export default class Good {
 
     get price () {
         return this._price;
+    }
+
+    set price (value) {
+        this._price =value;
     }
 }
